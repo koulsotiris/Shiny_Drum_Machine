@@ -159,7 +159,18 @@ document.addEventListener("DOMContentLoaded", function() {
             var valueLabel = document.getElementById('value' + padNumber(index + 1));
             var key = Object.keys(soundPaths)[index];
             var parameterValue;
+
+              // Log the key and corresponding drumBeatParameters entry
+            console.log(`Index: ${index}`);
+            console.log(`Key: ${key}`);
+            console.log(`drumBeatParameters[${key}]:`, drumBeatParameters[key]);
     
+            if (!drumBeatParameters[key]) {
+                console.error(`Key ${key} is not found in drumBeatParameters`);
+                // Provide default values or handle the error appropriately
+                drumBeatParameters[key] = { volume: 0, pitch: 0, pan: 0 }; // This prevents the error 
+            }
+            
             switch (selectedOption) {
                 case 'Volume':
                     parameterValue = drumBeatParameters[key].volume * 100;
