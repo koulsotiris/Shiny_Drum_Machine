@@ -156,8 +156,11 @@ document.addEventListener("DOMContentLoaded", function() {
     function UpdateSliders(selectedOption) {
         // Iterate through each slider and update its value based on the selected option
         sliders.forEach(function (slider, index) {
+            // Adjust index to start from 1 instead of 0
+            if (index - 1 >= Object.keys(soundPaths).length){ return;} // Prevent out-of-bounds access
+            
             var valueLabel = document.getElementById('value' + padNumber(index + 1));
-            var key = Object.keys(soundPaths)[index];
+            var key = Object.keys(soundPaths)[index-1];
             var parameterValue;
 
               // Log the key and corresponding drumBeatParameters entry
