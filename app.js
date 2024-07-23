@@ -156,43 +156,42 @@ document.addEventListener("DOMContentLoaded", function() {
     function UpdateSliders(selectedOption) {
         // Iterate through each slider and update its value based on the selected option
         sliders.forEach(function (slider, index) {
-            // Adjust index to start from 1 instead of 0
-            if (index - 1 >= Object.keys(soundPaths).length){ return;} // Prevent out-of-bounds access
-            
-            var valueLabel = document.getElementById('value' + padNumber(index + 1));
-            var key = Object.keys(soundPaths)[index-1];
-            var parameterValue;
-
-              // Log the key and corresponding drumBeatParameters entry
-            console.log(`Index: ${index}`);
-            console.log(`Key: ${key}`);
-            console.log(`drumBeatParameters[${key}]:`, drumBeatParameters[key]);
+            if (index<6){
+                var valueLabel = document.getElementById('value' + padNumber(index + 1));
+                var key = Object.keys(soundPaths)[index];
+                var parameterValue;
     
-            if (!drumBeatParameters[key]) {
-                console.error(`Key ${key} is not found in drumBeatParameters`);
-                // Provide default values or handle the error appropriately
-                drumBeatParameters[key] = { volume: 0.75, pitch: 1.0, pan: 0.0 }; // This prevents the error 
+                  // Log the key and corresponding drumBeatParameters entry
+                console.log(`Index: ${index}`);
+                console.log(`Key: ${key}`);
+                console.log(`drumBeatParameters[${key}]:`, drumBeatParameters[key]);
+        
+                if (!drumBeatParameters[key]) {
+                    console.error(`Key ${key} is not found in drumBeatParameters`);
+                    // Provide default values or handle the error appropriately
+                    drumBeatParameters[key] = { volume: 0.75, pitch: 1.0, pan: 0.0 }; // This prevents the error 
+                }
+                
+                switch (selectedOption) {
+                    case 'Volume':
+                        parameterValue = drumBeatParameters[key].volume * 100;
+                        slider.max = 100;
+                        break;
+                    case 'Pitch':
+                        parameterValue = drumBeatParameters[key].pitch * 100;
+                        slider.max=200;
+                        break;
+                    case 'Pan':
+                        // Assuming pan values are between -1 and 1, mapping to 0-100 for sliders
+                        parameterValue = (drumBeatParameters[key].pan + 1) * 50;
+                        slider.max=100 ;
+                        break;
+                }
+        
+                // Update the slider value and corresponding label
+                slider.value = parameterValue;
+                valueLabel.textContent = parameterValue;
             }
-            
-            switch (selectedOption) {
-                case 'Volume':
-                    parameterValue = drumBeatParameters[key].volume * 100;
-                    slider.max = 100;
-                    break;
-                case 'Pitch':
-                    parameterValue = drumBeatParameters[key].pitch * 100;
-                    slider.max=200;
-                    break;
-                case 'Pan':
-                    // Assuming pan values are between -1 and 1, mapping to 0-100 for sliders
-                    parameterValue = (drumBeatParameters[key].pan + 1) * 50;
-                    slider.max=100 ;
-                    break;
-            }
-    
-            // Update the slider value and corresponding label
-            slider.value = parameterValue;
-            valueLabel.textContent = parameterValue;
         });
     }
 
