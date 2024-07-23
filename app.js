@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (!drumBeatParameters[key]) {
                 console.error(`Key ${key} is not found in drumBeatParameters`);
                 // Provide default values or handle the error appropriately
-                drumBeatParameters[key] = { volume: 0, pitch: 0, pan: 0 }; // This prevents the error 
+                drumBeatParameters[key] = { volume: 0.75, pitch: 1.0, pan: 0.0 }; // This prevents the error 
             }
             
             switch (selectedOption) {
