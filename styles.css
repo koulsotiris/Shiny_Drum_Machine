@@ -320,7 +320,6 @@ div {
 }
 
 #tempodisplay {
-	background-image: url('../images/tempo_bg.png');
 	height: 20px;
 	display: inline-block;
 	vertical-align: top;
