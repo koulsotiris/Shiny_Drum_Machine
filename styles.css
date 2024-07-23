@@ -1,0 +1,432 @@
+
+body {
+	background-color: rgba(6, 2, 17, 0.644);
+	color: rgb(255, 255, 255);
+	font-family: 'Droid Sans', Arial, sans-serif;
+	font-size: 13px;
+    display: grid;
+    grid-template-areas:
+      "title"
+      "tools"
+      "pad"
+      "params";
+}
+
+section#tools {
+    grid-area: tools;
+    
+  }
+
+  section#title {
+    grid-area: title;
+    
+  }
+
+  section#params {
+    grid-area: params;
+    
+  }
+
+  section#pad {
+    grid-area: pad;
+    
+  }
+
+* {
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	cursor: pointer !important;
+}
+
+.track {
+    height: 30px;
+    border: 1px solid transparent;
+    background: var(--track-back);
+    display: flex;
+    align-items: center;
+} 
+
+.track .grid-container {
+    display: flex;
+    margin-left: 5px;
+    min-width: 364px;
+    grid-gap: 2px;
+}
+
+
+
+div {
+    display: block;
+}
+ /* Add a class selector for sliders */
+.sliderWidget {
+    margin-bottom: 3px;
+}
+
+/* Remove inline styles from sliderWidget elements in HTML */
+.sliderWidget input {
+    background: grey;
+    border: solid 1px black;
+    border-radius: 8px;
+    height: 10px;
+    outline: none;
+    -webkit-appearance: none;
+    margin: 5px;
+}
+
+/* Add styles for slider thumb */
+.sliderWidget input::-webkit-slider-thumb {
+    background-color: black;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+}
+
+
+#trackHeader {
+    height: 5px;
+    display: flex;
+    margin-bottom: 5px;
+    margin-left: 78px;
+}
+
+#trackHeader .step {
+    width: 18px;
+    height: 5px;
+    border: 1px solid #666 ;
+    margin-right: 12px;
+}
+
+#title {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 15px 0;
+    text-align: center;
+    background: linear-gradient(45deg, #000000, #000000); /* Black background - adjust as needed */
+    -webkit-background-clip: text;
+    color: rgba(255, 255, 255, 0.8); /* White font with 80% opacity */
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5); /* White text shadow */
+}
+
+
+
+
+#version {
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.container {
+	border-radius: 5px;
+	border: 1px solid rgb(0, 0, 0);
+	width: 900px;
+	background-color: rgba(81, 82, 85, 0.801);
+	margin: 0px auto;
+	padding: 20px 20px 15px 20px;
+  -webkit-box-shadow:0px 2px 3px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+#io { display:block; padding:5px 20px;}
+
+.container.active {
+	display: block;
+}
+
+.container.tools{
+    display:flex;
+}
+
+.label {
+	display: inline-block;
+	vertical-align: top;
+	width: 45px;
+	position: relative;
+	top: 5px;
+	margin-left: 20px;
+}
+
+
+
+#paramsleft_container {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 50px;
+}
+
+#paramsright_container {
+	display: inline-block;
+    vertical-align: top;
+	margin-left: 50px;
+}
+
+.btn {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+ #kitlabel, #effectlabel, #slidebarlabel {
+	top: 6px; 
+	margin-right: 15px;
+} 
+
+#beatlabel {
+	top: 8px;
+}
+
+/* Styles for kit option box and dropdown menu */
+.combo {
+	width: 158px;
+	height: 15px;
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 255, 255)), 
+		color-stop(2%, rgb(255, 255, 255)), color-stop(5%, rgb(244, 244, 244)), 
+		color-stop(90%, rgb(255, 255, 255)), to(rgb(232, 232, 232)));
+	border-radius: 3px;
+	border: 1px solid rgb(220, 220, 220);
+	color: rgb(0, 0, 0);
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	padding: 6px;
+	margin-bottom: 10px;
+}
+
+.combo img {
+	position: absolute;
+	left: 150px;
+	top: 11px;
+}
+
+.combolist {
+	list-style-type: none;
+	position: absolute;
+	top: 27px;
+	left: -1px;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.541);
+	border-radius: 2px;
+	border: 1px solid rgb(200, 200, 200);
+	/* width: 160px; */
+	padding: 5px;
+	 display: none; 
+	z-index: 1;
+}
+
+
+
+.combo.active .combolist {
+	display: block;
+}
+
+.combolist li {
+	color:azure;
+	padding: 2px;
+	border-radius: 2px;
+}
+
+.combolist li:hover {
+	color: rgb(255, 255, 255);
+	background-color: rgb(245, 4, 4);
+}
+
+/* Styles for sliebar control option box and dropdown menu */
+.slidedrop {
+	width: 158px;
+	height: 15px;
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 255, 255)), 
+		color-stop(2%, rgb(255, 255, 255)), color-stop(5%, rgb(244, 244, 244)), 
+		color-stop(90%, rgb(255, 255, 255)), to(rgb(232, 232, 232)));
+	border-radius: 3px;
+	border: 1px solid rgb(220, 220, 220);
+	color: rgb(0, 0, 0);
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	padding: 6px;
+	margin-bottom: 10px;
+}
+
+.slidedrop img {
+	position: absolute;
+	left: 150px;
+	top: 11px;
+}
+
+.slidelist {
+	list-style-type: none;
+	position: absolute;
+	top: 27px;
+	left: -1px;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 0.541);
+	border-radius: 2px;
+	border: 1px solid rgb(200, 200, 200);
+	/* width: 160px; */
+	padding: 5px;
+	 display: none; 
+	z-index: 1;
+}
+
+
+
+.slidedrop.active .slidelist {
+	display: block;
+}
+
+.slidelist li {
+	color:azure;
+	padding: 2px;
+	border-radius: 2px;
+}
+
+.slidelist li:hover {
+	color: rgb(255, 255, 255);
+	background-color: rgb(245, 4, 4);
+}
+
+
+
+/* #effectlist {
+	height: 200px;
+	overflow: auto;
+} */
+
+.slider_container {
+	margin: 0 1px;
+	vertical-align: top; 
+    
+}
+
+#effect_container{
+    width: 300px;
+	height: 30px;
+    display:flex;
+    
+}
+
+
+.slider_label {
+	text-align: left;
+}
+
+#tempo_container {
+	height: 40px;
+	margin-bottom: 10px;
+}
+
+#tempodisplay {
+	background-image: url('../images/tempo_bg.png');
+	height: 20px;
+	display: inline-block;
+	vertical-align: top;
+	padding: 10px 5px;
+}
+
+#tempo {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+#bpm {
+	font-size: 14px;
+}
+
+#tempoinc, #tempodec {
+	position: relative;
+	top: 3px;
+	left: 1px;
+}
+
+.vrule {
+	width: 1px;
+	height: 160px;
+	background-color: rgb(0, 0, 0);
+	margin: 0 8px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#play, #stop {
+	margin-right: 12px;
+}
+
+#stop {
+	display: none;
+}
+
+#play.playing {
+	display: none;
+}
+
+#stop.playing {
+	display: inline;
+}
+
+#demos_container {
+	margin-left: 10px;
+}
+
+#save_container, #load_container {
+	height: 521px;
+}
+
+#save_textarea, #load_textarea {
+	width: 607px;
+	height: 270px;
+	margin: 20px 40px;
+	font-size: 12px;
+	-webkit-user-select: text !important;
+}
+
+#save_ok {
+	display: block;
+	margin: 0 auto;
+}
+
+#load_buttons {
+	margin: 0 auto;
+	width: 160px;
+}
+
+#load_ok, #load_cancel {
+	margin: 0 3px;
+}
+
+#loading {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#loadingcard {
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(235, 235, 235)), 
+	 to(rgb(255, 255, 255)));
+  -webkit-box-shadow:0px 2px 3px rgba(0, 0, 0, 0.2);
+	width: 260px;
+	height: 60px;
+	border-radius: 10px;
+	margin: 210px auto;
+	padding: 10px;
+}
+
+#loadingtext {
+	text-align: center;
+	margin: 5px 0;
+}
+
+#loadingcard img {
+	margin: 15px auto;
+	display: block;
+}
+
+img.preload { display: none; }
+#MIDIPlugin { visibility: hidden; }
+  

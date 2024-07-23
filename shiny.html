@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="description" content="Create custom drum beats with a few clicks.  Choose from 15 drum kits and 26 effects, and adjust the pitch of each drum.  Save and share your beats… rock on!">
+<title>Drum Machine</title>
+
+<link rel="stylesheet" type="text/css" href = "styles.css" />
+
+<!-- favicon image -->
+
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+
+<!-- Set up Web MIDI polyfill -->
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="demos.js"></script>
+</head>
+
+
+<body id='body'>
+    <div id='title'>
+        Shiny Drum Machine
+    </div>
+    <!-- PAD -->
+    <section class='container active' id='pad'>
+        <div id="trackHeader"><div class="step beat"></div><div class="step"></div><div class="step"></div><div class="step"></div><div class="step beat"></div><div class="step"></div><div class="step"></div><div class="step"></div><div class="step beat"></div><div class="step"></div><div class="step"></div><div class="step"></div><div class="step beat"></div><div class="step"></div><div class="step"></div><div class="step"></div></div>
+        <div class="track" id="track-1">
+            <div class="grid-container">
+                <span class='label'>Tom 1</span>
+                <img id='Tom1_0' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom1_1' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom1_2' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom1_3' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom1_4' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom1_5' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom1_6' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom1_7' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom1_8' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom1_9' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom1_10' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom1_11' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom1_12' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom1_13' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom1_14' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom1_15' class='btn' src='images/grey.png' alt="grey" width="30" height="20">
+            </div>
+            <div class="sliderWidget" >
+                <input autocomplete="off" id="track01" type="range" min="1" max="100" value="75" >
+                <label id="value01">75</label>
+              </div>
+        </div>
+        <div class="track" id="track-2">
+            <div class="grid-container">
+                <span class='label'>Tom 2</span>
+                <img id='Tom2_0' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom2_1' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom2_2' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom2_3' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom2_4' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom2_5' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom2_6' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom2_7' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom2_8' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom2_9' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom2_10' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom2_11' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom2_12' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom2_13' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom2_14' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom2_15' class='btn' src='images/grey.png' alt="grey" width="30" height="20">
+            </div>
+            <div class="sliderWidget" >
+                <input autocomplete="off" id="track02" type="range" min="1" max="100" value="75" >
+                <label id="value02">75</label>
+              </div>
+        </div>
+        <div class="track" id="track-3">
+            <div class="grid-container">
+                <span class='label'>Tom 3</span>
+                <img id='Tom3_0' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom3_1' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom3_2' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom3_3' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom3_4' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom3_5' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom3_6' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom3_7' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom3_8' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom3_9' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom3_10' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom3_11' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom3_12' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom3_13' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom3_14' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Tom3_15' class='btn' src='images/grey.png' alt="grey" width="30" height="20">
+            </div>
+            <div class="sliderWidget" >
+                <input autocomplete="off" id="track03" type="range" min="1" max="100" value="75" >
+                <label id="value03">75</label>
+              </div>
+        </div>
+        <div class="track" id="track-4">
+            <div class="grid-container">
+                <span class='label'>Hi-Hat</span>
+                <img id='HiHat_0' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='HiHat_1' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='HiHat_2' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='HiHat_3' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='HiHat_4' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='HiHat_5' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='HiHat_6' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='HiHat_7' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='HiHat_8' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='HiHat_9' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='HiHat_10' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='HiHat_11' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='HiHat_12' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='HiHat_13' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='HiHat_14' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='HiHat_15' class='btn' src='images/grey.png' alt="grey" width="30" height="20">
+            </div>
+            <div class="sliderWidget" >
+                <input autocomplete="off" id="track04" type="range" min="1" max="100" value="75" >
+                <label id="value04">75</label>
+              </div>
+        </div>
+        <div class="track" id="track-5">
+            <div class="grid-container">
+                <span class='label'>Snare</span>
+                <img id='Snare_0' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Snare_1' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Snare_2' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Snare_3' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Snare_4' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Snare_5' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Snare_6' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Snare_7' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Snare_8' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Snare_9' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Snare_10' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Snare_11' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Snare_12' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Snare_13' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Snare_14' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Snare_15' class='btn' src='images/grey.png' alt="grey" width="30" height="20">
+            </div>
+            <div class="sliderWidget" >
+                <input autocomplete="off" id="track05" type="range" min="1" max="100" value="75">
+                <label id="value05">75</label>
+              </div>
+        </div>
+        <div class="track" id="track-6">
+            <div class="grid-container">
+                <span class='label'>Kick</span>
+                <img id='Kick_0' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Kick_1' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Kick_2' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Kick_3' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Kick_4' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Kick_5' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Kick_6' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Kick_7' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Kick_8' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Kick_9' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Kick_10' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Kick_11' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Kick_12' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Kick_13' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Kick_14' class='btn' src='images/grey.png' alt="grey" width="30" height="20"><img id='Kick_15' class='btn' src='images/grey.png' alt="grey" width="30" height="20">
+            </div>
+            <div class="sliderWidget" style="margin-bottom: 3px;">
+                <input autocomplete="off" id="track06" type="range" min="1" max="100" value="75" >
+                <label id="value06">75</label>
+              </div>
+              
+              
+              
+        </div>
+    
+    </section>
+
+    <!-- PARAMETERS -->
+
+    <section class='container active' id='params'>
+        <div id='paramsleft_container'>
+            <!-- kit selector with dropdown menu -->
+            <div id='kitcombo_container'>
+                <span class='label' id='kitlabel'>Kit</span>
+                <div class="combo" id="combo1">
+                    <span id="comboText">Kit8</span>
+                    <!-- <img src="images/arrow.png" alt="Dropdown Arrow"> -->
+                    <ul class="combolist" id="combolist1">
+                        <li data-option="Kit8">Kit8</li>
+                        <li data-option="Bongos">Bongos</li>
+                        <li data-option="Acoustic">Acoustic</li>
+                        <li data-option="Techno">Techno</li>
+                        <li data-option="Stark">Stark</li>
+                    </ul>
+                </div>
+                
+            </div>
+
+            <!-- slidebar selector with dropdown menu , changes between volume , pitch etc -->
+            <div id='slidebarscombo_container'>
+                <span class='label' id='slidebarlabel'>Slidebars control</span>
+                <div class="slidedrop" id="combo2">
+                    <span id="slidebars_text">Volume</span>
+                    <!-- <img src="images/arrow.png" alt="Dropdown Arrow"> -->
+                    <ul class="slidelist" id="combolist2">
+                        <li data-option="Volume">Volume</li>
+                        <li data-option="Pitch">Pitch</li>
+                        <li data-option="Pan">Pan</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id='effectcombo_container'>
+                <span class='label' id='effectlabel'>Effect</span>
+                <div class='combo' id='effectcombo'>
+                    <span id='effectname'>Select Option</span>
+                    <ul class='combolist' id='effectlist'>
+                        <li data-option="0 ps">ps</li> 
+                        <li data-option="1 backslap">backslap</li>  
+                        <li data-option="2 wildecho">wildecho</li>  
+                        <li data-option="3 comb-saw">comb saw</li>
+                        <li data-option="4 bright-hall">bright hall</li>
+                        <li data-option="5 chorus-feedback">chorus feedback</li>
+                        <li data-option="6 comb-square">comb square</li>
+                        <li data-option="7 cosmic-ping-long">cosmic ping long</li>
+                        <li data-option="8 crackle">crackle</li>
+                        <li data-option="9 diffusor">diffusor</li>
+                        <li data-option="10filter-rhythm">filter rhythm</li>
+                        <li data-option="11medium-room">medium room</li>     
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        <div class='vrule'></div>
+        <div id='paramsright_container'>
+            <div class='slider_container' id='effect_container'>
+                <span class='slider_label'>
+                    Effect Level
+                </span>
+                <div class="sliderWidget">
+                    <input autocomplete="off" id="effectSlider" type="range" min="0.0" max="0.1" value="0.05" step="0.01">
+                    <label id="effectValue">5</label>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- TOOLS -->
+    <section class='container tools' id='tools'>
+        <span class='label' id='beatlabel'>Play</span>
+        <img id='tpl' src='images/play.png' alt="play" width='40' height='33'>
+        <img id='stop' src='images/stop.png' alt="stop">
+        <img id='save' src='images/save.png' alt="save" width='40' height='33'> <img id='load' src='images/load.png' alt="load" width='37' height='30'> <img id='reset' src='images/reset.png' alt="reset" width='40' height='33'>
+        <span id='demos_container'>
+            <span class='label' id='demolabel'>Demo</span>
+            <img id='demo1' src='images/key1.png' alt="demo1" width='40' height='33'><img id='demo2' src='images/key2.png' alt="demo2" width='44' height='33'><img id='demo3' alt="demo3" src='images/key3.png' width='44' height='33'>
+        </span>
+        <div id='tempo_container'>
+            <span class='label' id='tempolabel'>Tempo</span>
+            <div id='tempodisplay'>
+                <div class="sliderWidget" style="margin-bottom: 3px;">
+                    <input autocomplete="off" id="tempo" type="range" min="50" max="200" value="100" >
+                    <label id="tvalue">100</label><label id="t1value"> bpm</label>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>
