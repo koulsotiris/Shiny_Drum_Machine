@@ -4,8 +4,8 @@
 Shiny Drum Machine is a web-based drum machine that allows users to create custom drum beats with just a few clicks. The application provides multiple drum kits, effects, and pitch controls for each drum. Users can save and load their beats, adjusting parameters to fine-tune their sound.
 
 ## Features
-- 15 Drum Kits: Choose from a variety of drum sounds including Kit8, Bongos, Acoustic, Techno, and Stark.
-- 26 Effects: Apply different audio effects like echo, chorus, and room reverberation.
+- 5 Drum Kits: Choose from a variety of drum sounds including Kit8, Bongos, Acoustic, Techno, and Stark.
+- 12 Effects: Apply different audio effects like echo, chorus, and room reverberation.
 - Pitch and Volume Control: Adjust the sound parameters of each drum individually.
 - Beat Sequencing: Create beats by activating drum pads in a step-sequencer layout.
 - Playback and Tempo Control: Start, stop, and adjust the speed of your beats.
